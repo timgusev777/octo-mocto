@@ -39,7 +39,7 @@ def bin_guess_number(number, start, finish):
         return (number, steps)
 
 
-def main():
+def guess_number():
     """Принимает на вход 4 значения: искомое и диапозон для поиска (начало и конец диапозона), а также вариацию
     поиска. Запускает функцию guess_number"""
     number = int(input("Введите искомое число: "))
@@ -55,4 +55,4 @@ def main():
     return "Искомое число: " + str(target), "количество шагов: " + str(steps_count)
 
 
-print(main())
+print(guess_number())
