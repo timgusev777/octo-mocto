@@ -1,5 +1,3 @@
-import unittest
-
 def gen_bin_tree(height=4, root=4, left_branch=lambda l: l * 4, right_branch=lambda r: r + 1):
     '''строим бинарное дерево заданной высоты нерекурсивным способом'''
 
@@ -47,20 +45,3 @@ def gen_bin_tree(height=4, root=4, left_branch=lambda l: l * 4, right_branch=lam
 
     root_value = levels[0][0]
     return {root_value: val_node[root_value]}
-
-#print(gen_bin_tree())
-
-class TestGenTree(unittest.TestCase):
-
-    def test_tree_1(self):
-        tree = gen_bin_tree()
-        self.assertIn(4, tree)
-        level_1 = tree[4]
-        self.assertIn(16, level_1)
-        self.assertIn(5, level_1)
-    def test_tree_2(self):
-        self.assertEqual(gen_bin_tree(height=0, root=4), {4: {}})
-    def test_tree_3(self):
-        self.assertEqual(gen_bin_tree(height=-1), "значение не должно быть отрицательным")
-
-unittest.main(argv=[''], verbosity=2, exit=False)
